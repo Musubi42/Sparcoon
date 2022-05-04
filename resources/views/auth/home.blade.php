@@ -7,15 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{ route('login') }}" method="POST">
+    <form action="{{ route('logout') }}" method="post">
         @csrf
-        <input type="email" name="email" id="email" placeholder="Mail" />
-        <input type="password" name="password" id="password">
-
-        <button type="submit">
-            Envoyer
-        </button>
+        <button type="submit">Déconnexion</button>
     </form>
-    
 </body>
 </html>
