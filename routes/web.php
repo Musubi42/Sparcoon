@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExampleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/profile', function(){
+    return view('auth.profile');
+})->name('profile')->middleware('auth');
+
+
+Route::resource('examples', ExampleController::class)->middleware('auth');
