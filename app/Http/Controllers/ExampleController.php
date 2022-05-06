@@ -37,13 +37,14 @@ class ExampleController extends Controller
      */
     public function store(StoreExampleRequest $request)
     {
+        $validated = $request->validated();
         $example  = new Example([
             'title'=> $request->title,
             'user_id'=> auth()->user()->id,
         ]);
 
         $example->save();
-        return redirect()->route('home');
+        return redirect()->route('examples.index')->with('success', 'L\'exemple est bien enregistré.');
     }
 
     /**
@@ -78,7 +79,7 @@ class ExampleController extends Controller
     public function update(UpdateExampleRequest $request, Example $example)
     {
         $example->update($request->all());
-        return redirect()->route('home');
+        return redirect()->route('examples.index')->with('success', 'L\'exemple est bien modifié.');
     }
 
     /**
@@ -90,6 +91,6 @@ class ExampleController extends Controller
     public function destroy(Example $example)
     {
         Example::destroy($example->id);
-        return redirect()->route('home');
+        return redirect()->route('examples.index')->with('success', 'L\'exemple est bien supprimé.');
     }
 }

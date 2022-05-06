@@ -9,7 +9,7 @@
         @csrf
         @method("PATCH")
 
-        <input type="text" name="title" id="title" placeholder="{{ $example->title }}">
+        <input type="text" name="title" id="title" value="{{ $example->title }}">
         <button type="submit">Sauvegarder</button>
     </form>
 @endsection
