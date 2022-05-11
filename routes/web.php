@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExampleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,3 +63,12 @@ Route::get('/vehicule', function () {
 Route::get('/calendrier', function () {
   return view('calendrier');
 })->name('calendrier');
+    return view('welcome');
+});
+
+Route::get('/profile', function(){
+    return view('auth.profile');
+})->name('profile')->middleware('auth');
+
+
+Route::resource('examples', ExampleController::class)->middleware('auth');
