@@ -14,27 +14,51 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('bienvenueclient');
+  return view('accueil');
 })->name('accueil')->middleware('auth');
 
 Route::get('/profil', function () {
-    return view('auth.home');
+  return view('auth.home');
 })->name('profil')->middleware('auth');
 
 Route::get('/patrimoine', function () {
-    return view('patrimoine');
+  return view('patrimoine');
 })->name('pat');
 
 Route::get('/depenses', function () {
-    return view('depenses');
+  return view('depenses');
 })->name('dep');
 
 Route::get('/traitements', function () {
-    return view('traitements');
+  return view('traitements');
 })->name('trait');
 
 Route::get('/calendrier', function () {
-    return view('calendrier');
+  return view('calendrier');
 })->name('cal');
 
-Route::get('/tests', [initController::class, 'create'])->middleware('auth');
+// TODO : Les routes ci-dessous sont a créer
+
+Route::get('/traitement', function () {
+  return view('traitement');
+})->name('traitement');
+
+Route::get('/intervenant', function () {
+  return view('intervenant');
+})->name('intervenant');
+
+Route::get('/patrimoine', function () {
+  return view('patrimoine');
+})->name('patrimoine');
+
+Route::get('/patient', function () {
+  return view('patient');
+})->name('patient');
+
+Route::get('/vehicule', function () {
+  return view('vehicule');
+})->name('vehicule');
+
+Route::get('/calendrier', function () {
+  return view('calendrier');
+})->name('calendrier');
