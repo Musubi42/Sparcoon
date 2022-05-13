@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ExampleController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExampleController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,9 +69,7 @@ Route::get('/calendrier', function () {
   return view('calendrier');
 })->name('calendrier');
 
-Route::get('/profile/{username}', function () {
-  return view('auth.profile', compact('username'));
-})->name('profile')->middleware('auth');
+Route::get('/profile/{username}', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');
 
 Route::get('/objec_show', function()
  {

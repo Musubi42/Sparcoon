@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Profile;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreProfileRequest;
@@ -61,9 +62,11 @@ class ProfileController extends Controller
      * @param  \App\Models\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function show(Profile $profile)
+    public function show(Profile $profile, string $username)
     {
-        //
+        $user = User::where('name', $username)->first();
+        $profile = Profile::where('user_id', $user->id)->first();
+        return view('auth.profile', compact('profile'));
     }
 
     /**
