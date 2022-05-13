@@ -17,8 +17,8 @@
                 class="flex flex-wrap p-8 text-center md:text-left hover:bg-white rounded-md hover:shadow-xl transition duration-200">
                 <div class="w-full md:w-auto mb-6 md:mb-0 md:pr-6">
                     <div
-                        class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-green-200 rounded-lg">
-                        <svg width="21" height="21" viewBox="0 0 640 512" fill="black" xmlns="http://www.w3.org/2000/svg">
+                        class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-green-700 rounded-lg">
+                        <svg width="21" height="21" viewBox="0 0 640 512" fill="white" xmlns="http://www.w3.org/2000/svg">
                             {{-- Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
                             <path
                                 d="M192 160C192 177.7 177.7 192 160 192C142.3 192 128 177.7 128 160V128C128 74.98 170.1 32 224 32C277 32 320 74.98 320 128V135.8C320 156.6 318.8 177.4 316.4 198.1L438.8 161.3C450.2 157.9 462.6 161.1 470.1 169.7C479.3 178.3 482.1 190.8 478.4 202.1L460.4 255.1H544C561.7 255.1 576 270.3 576 287.1C576 305.7 561.7 319.1 544 319.1H416C405.7 319.1 396.1 315.1 390 306.7C384 298.4 382.4 287.6 385.6 277.9L398.1 240.4L303.7 268.7C291.9 321.5 272.2 372.2 245.3 419.2L231.4 443.5C218.5 466.1 194.5 480 168.5 480C128.5 480 95.1 447.5 95.1 407.5V335.6C95.1 293.2 123.8 255.8 164.4 243.7L248.8 218.3C253.6 191.1 255.1 163.5 255.1 135.8V128C255.1 110.3 241.7 96 223.1 96C206.3 96 191.1 110.3 191.1 128L192 160zM160 335.6V407.5C160 412.2 163.8 416 168.5 416C171.5 416 174.4 414.4 175.9 411.7L189.8 387.4C207.3 356.6 221.4 324.1 231.8 290.3L182.8 304.1C169.3 309 160 321.5 160 335.6V335.6zM24 368H64V407.5C64 410.4 64.11 413.2 64.34 416H24C10.75 416 0 405.3 0 392C0 378.7 10.75 368 24 368zM616 416H283.5C291.7 400.3 299.2 384.3 305.9 368H616C629.3 368 640 378.7 640 392C640 405.3 629.3 416 616 416z" />
@@ -28,11 +28,18 @@
                 <div class="w-full md:flex-1 md:pt-3">
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Nom de l'objet</h3>
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
-                    {{-- On hover the pen, change the cursor to pointer, not on the all span --}}
-                    <span id="objectName"
-                        style="background: url('{{ asset('storage/asset/image/icon/pen.svg') }}') no-repeat; background-size: contain; background-position: right; cursor: pointer;"
-                        class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">Je
-                        suis un nom d'objet</span>
+                    <div class="flex place-content-between">
+                        <span id="objectName"
+                            class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">Je
+                            suis un nom d'objet</span>
+                        <button>
+                            <svg width="42" height="42" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
+                                <path
+                                    d="M362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32zM421.7 220.3L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3z" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -40,8 +47,8 @@
                 class="flex flex-wrap p-8 text-center md:text-left hover:bg-white rounded-md hover:shadow-xl transition duration-200">
                 <div class="w-full md:w-auto mb-6 md:mb-0 md:pr-6">
                     <div
-                        class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-green-200 rounded-lg">
-                        <svg width="21" height="21" viewBox="0 0 384 512" fill="black" xmlns="http://www.w3.org/2000/svg">
+                        class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-green-700 rounded-lg">
+                        <svg width="21" height="21" viewBox="0 0 384 512" fill="white" xmlns="http://www.w3.org/2000/svg">
                             {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
                             <path d="M384 48V512l-192-112L0 512V48C0 21.5 21.5 0 48 0h288C362.5 0 384 21.5 384 48z" />
                         </svg>
@@ -50,11 +57,18 @@
                 <div class="w-full md:flex-1 md:pt-3">
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Catégorie</h3>
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
-                    {{-- On hover the pen, change the cursor to pointer, not on the all span --}}
-                    <span id="categorie"
-                        style="background: url('{{ asset('storage/asset/image/icon/pen.svg') }}') no-repeat; background-size: contain; background-position: right; cursor: pointer;"
-                        class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">Je
-                        suis une catégorie</span>
+                    <div class="flex place-content-between">
+                        <span id="objectName"
+                            class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">Je
+                            suis un nom d'objet</span>
+                        <button>
+                            <svg width="42" height="42" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
+                                <path
+                                    d="M362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32zM421.7 220.3L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3z" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -72,17 +86,26 @@
                 </div>
                 <div class="w-full md:flex-1 md:pt-3">
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Date d'achat</h3>
-                    {{-- On hover the pen, change the cursor to pointer, not on the all span --}}
-                    <span id="buyDate"
-                        style="background: url('{{ asset('storage/asset/image/icon/pen.svg') }}') no-repeat; background-size: contain; background-position: right; cursor: pointer;"
-                        class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">Je
-                        suis une date d'achat</span>
+                    <div class="flex place-content-between">
+                        <span id="objectName"
+                            class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">Je
+                            suis un nom d'objet</span>
+                        <button>
+                            <svg width="42" height="42" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
+                                <path
+                                    d="M362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32zM421.7 220.3L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3z" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
+
             <div
                 class="flex flex-wrap p-8 text-center md:text-left hover:bg-white rounded-md hover:shadow-xl transition duration-200">
                 <div class="w-full md:w-auto mb-6 md:mb-0 md:pr-6">
-                    <div class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-red-500 rounded-lg">
+                    <div
+                        class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-green-700 rounded-lg">
                         <svg width="21" height="21" viewBox="0 0 384 512" fill="white" xmlns="http://www.w3.org/2000/svg">
                             {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
                             <path
@@ -93,18 +116,26 @@
                 <div class="w-full md:flex-1 md:pt-3">
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Valeur</h3>
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
-                    {{-- On hover the pen, change the cursor to pointer, not on the all span --}}
-                    <span id="value"
-                        style="background: url('{{ asset('storage/asset/image/icon/pen.svg') }}') no-repeat; background-size: contain; background-position: right; cursor: pointer;"
-                        class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">Je
-                        suis une valeur</span>
+                    <div class="flex place-content-between">
+                        <span id="objectName"
+                            class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">Je
+                            suis un nom d'objet</span>
+                        <button>
+                            <svg width="42" height="42" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
+                                <path
+                                    d="M362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32zM421.7 220.3L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3z" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
 
             <div
                 class="flex flex-wrap p-8 text-center md:text-left hover:bg-white rounded-md hover:shadow-xl transition duration-200">
                 <div class="w-full md:w-auto mb-6 md:mb-0 md:pr-6">
-                    <div class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-red-500 rounded-lg">
+                    <div
+                        class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-green-700 rounded-lg">
                         <svg width="21" height="21" viewBox="0 0 448 512" fill="white" xmlns="http://www.w3.org/2000/svg">
                             {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
                             <path
@@ -113,13 +144,21 @@
                     </div>
                 </div>
                 <div class="w-full md:flex-1 md:pt-3">
-                    <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Description</h3>
+                    <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Description
+                    </h3>
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
-                    {{-- On hover the pen, change the cursor to pointer, not on the all span --}}
-                    <span id="description"
-                        style="background: url('{{ asset('storage/asset/image/icon/pen.svg') }}') no-repeat; background-size: contain; background-position: right; cursor: pointer;"
-                        class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">Je
-                        suis une descrition</span>
+                    <div class="flex place-content-between">
+                        <span id="objectName"
+                            class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">Je
+                            suis un nom d'objet</span>
+                        <button>
+                            <svg width="42" height="42" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
+                                <path
+                                    d="M362.7 19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7 19.32zM421.7 220.3L188.5 453.4C178.1 463.8 165.2 471.5 151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7 .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7 220.3z" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -132,47 +171,62 @@
             <div class="flex flex-wrap -mx-4">
                 <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-12">
                     <div class="max-w-max mx-auto">
-                        <h4 class="mb-2 text-3xl md:text-4xl leading-tight font-semibold">Macauley Herring</h4>
+                        <h4 class="mb-2 text-3xl md:text-4xl leading-tight font-semibold">Macauley Herring
+                        </h4>
                         <img class="block mb-8" src="flex-ui-assets/images/teams/photo-employee1.png" alt="">
-                        <span class="text-lg font-medium text-gray-500 line-clamp-2">CEO &amp; Founder CEO &amp; Founder
+                        <span class="text-lg font-medium text-gray-500 line-clamp-2">CEO &amp; Founder CEO
+                            &amp; Founder
                             CEO
-                            &amp; FounderCEO &amp; Founder CEO &amp; Founder CEO &amp; CEO &amp; Founder Founder </span>
+                            &amp; FounderCEO &amp; Founder CEO &amp; Founder CEO &amp; CEO &amp; Founder
+                            Founder </span>
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-12">
                     <div class="max-w-max mx-auto">
-                        <h4 class="mb-2 text-3xl md:text-4xl leading-tight font-semibold">Macauley Herring</h4>
+                        <h4 class="mb-2 text-3xl md:text-4xl leading-tight font-semibold">Macauley Herring
+                        </h4>
                         <img class="block mb-8" src="flex-ui-assets/images/teams/photo-employee1.png" alt="">
-                        <span class="text-lg font-medium text-gray-500 line-clamp-2">CEO &amp; Founder CEO &amp; Founder
+                        <span class="text-lg font-medium text-gray-500 line-clamp-2">CEO &amp; Founder CEO
+                            &amp; Founder
                             CEO
-                            &amp; FounderCEO &amp; Founder CEO &amp; Founder CEO &amp; CEO &amp; Founder Founder </span>
+                            &amp; FounderCEO &amp; Founder CEO &amp; Founder CEO &amp; CEO &amp; Founder
+                            Founder </span>
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-12">
                     <div class="max-w-max mx-auto">
-                        <h4 class="mb-2 text-3xl md:text-4xl leading-tight font-semibold">Macauley Herring</h4>
+                        <h4 class="mb-2 text-3xl md:text-4xl leading-tight font-semibold">Macauley Herring
+                        </h4>
                         <img class="block mb-8" src="flex-ui-assets/images/teams/photo-employee1.png" alt="">
-                        <span class="text-lg font-medium text-gray-500 line-clamp-2">CEO &amp; Founder CEO &amp; Founder
+                        <span class="text-lg font-medium text-gray-500 line-clamp-2">CEO &amp; Founder CEO
+                            &amp; Founder
                             CEO
-                            &amp; FounderCEO &amp; Founder CEO &amp; Founder CEO &amp; CEO &amp; Founder Founder </span>
+                            &amp; FounderCEO &amp; Founder CEO &amp; Founder CEO &amp; CEO &amp; Founder
+                            Founder </span>
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-12">
                     <div class="max-w-max mx-auto">
-                        <h4 class="mb-2 text-3xl md:text-4xl leading-tight font-semibold">Macauley Herring</h4>
+                        <h4 class="mb-2 text-3xl md:text-4xl leading-tight font-semibold">Macauley Herring
+                        </h4>
                         <img class="block mb-8" src="flex-ui-assets/images/teams/photo-employee1.png" alt="">
-                        <span class="text-lg font-medium text-gray-500 line-clamp-2">CEO &amp; Founder CEO &amp; Founder
+                        <span class="text-lg font-medium text-gray-500 line-clamp-2">CEO &amp; Founder CEO
+                            &amp; Founder
                             CEO
-                            &amp; FounderCEO &amp; Founder CEO &amp; Founder CEO &amp; CEO &amp; Founder Founder </span>
+                            &amp; FounderCEO &amp; Founder CEO &amp; Founder CEO &amp; CEO &amp; Founder
+                            Founder </span>
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-12">
                     <div class="max-w-max mx-auto">
-                        <h4 class="mb-2 text-3xl md:text-4xl leading-tight font-semibold">Macauley Herring</h4>
+                        <h4 class="mb-2 text-3xl md:text-4xl leading-tight font-semibold">Macauley Herring
+                        </h4>
                         <img class="block mb-8" src="flex-ui-assets/images/teams/photo-employee1.png" alt="">
-                        <span class="text-lg font-medium text-gray-500 line-clamp-2">CEO &amp; Founder CEO &amp; Founder
+                        <span class="text-lg font-medium text-gray-500 line-clamp-2">CEO &amp; Founder CEO
+                            &amp; Founder
                             CEO
-                            &amp; FounderCEO &amp; Founder CEO &amp; Founder CEO &amp; CEO &amp; Founder Founder </span>
+                            &amp; FounderCEO &amp; Founder CEO &amp; Founder CEO &amp; CEO &amp; Founder
+                            Founder </span>
                     </div>
                 </div>
             </div>

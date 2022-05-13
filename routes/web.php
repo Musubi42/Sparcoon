@@ -53,9 +53,17 @@ Route::get('/patrimoine', function () {
   return view('patrimoine');
 })->name('patrimoine');
 
-Route::get('/objet', function () {
-  return view('objet');
-})->name('objet');
+Route::get('/objet_show', function () {
+  return view('objet_show');
+})->name('objet_show');
+
+Route::get('/objet_modify', function () {
+  return view('objet_modify');
+})->name('objet_modify');
+
+Route::get('/objet_create', function () {
+  return view('objet_create');
+})->name('objet_create');
 
 Route::get('/patient', function () {
   return view('patient');
@@ -70,10 +78,5 @@ Route::get('/calendrier', function () {
 })->name('calendrier');
 
 Route::get('/profile/{username}', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');
-
-Route::get('/objec_show', function()
- {
-   return view('objet_show');
- })->name('objet_show');
 
 Route::resource('examples', ExampleController::class)->middleware('auth');
