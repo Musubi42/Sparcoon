@@ -6,7 +6,7 @@
             </a>
         </div>
         <div class="w-1/2 xl:w-1/3 xl:flex xl:justify-end">
-            <a class="block max-w-max" href="{{ route('profile.show', auth()->user()->name) }}">
+            <a class="block max-w-max" href="{{ route('profile.show', ['userId' => auth()->user()->id]) }}">
                 <img class="h-8" src="{{ asset('storage/asset/image/logo_logo.png') }}" alt="">
             </a>
         </div>

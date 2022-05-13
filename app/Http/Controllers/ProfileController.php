@@ -62,9 +62,9 @@ class ProfileController extends Controller
      * @param  \App\Models\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function show(Profile $profile, string $username)
+    public function show(Profile $profile, int $userId)
     {
-        $user = User::where('name', $username)->first();
+        $user = User::find($userId);
         $profile = Profile::where('user_id', $user->id)->first();
         return view('auth.profile', compact('profile'));
     }

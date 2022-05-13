@@ -77,6 +77,6 @@ Route::get('/calendrier', function () {
   return view('calendrier');
 })->name('calendrier');
 
-Route::get('/profile/{username}', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');
+Route::get('/profile/{userId}', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');
 
 Route::resource('examples', ExampleController::class)->middleware('auth');

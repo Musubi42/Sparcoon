@@ -1,7 +1,10 @@
-@extends('component.app')
+
+@extends('app.app')
 
 @section('title')
-    {{ auth()->user()->name }}
+    {{ $profile->user->firstname.' '.$profile->user->lastname }}
+
+   
 @endsection
 
 @section('content')
@@ -23,7 +26,7 @@
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Nom</h3>
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
                     <span class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700"
-                        id="firstName">Jean</span>
+                        id="firstName">{{ $profile->user->firstname }}</span>
                 </div>
             </div>
 
@@ -41,7 +44,7 @@
                 <div class="w-full md:flex-1 md:pt-3">
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Prénom</h3>
                     <span class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700"
-                        id="lastName"></span>
+                        id="lastName">{{ $profile->user->lastname }}</span>
                 </div>
             </div>
 
@@ -60,7 +63,7 @@
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Description</h3>
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
                     <textarea class="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
-                        placeholder="Description de l'objet" rows="5"></textarea>
+                     rows="5">  {{ $profile->bio }}</textarea>
                 </div>
             </div>
 
@@ -74,7 +77,7 @@
                 <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-12">
                     <div class="max-w-max mx-auto">
                         <h4 class="mb-2 text-3xl md:text-4xl leading-tight font-semibold">Macauley Herring</h4>
-                        <img class="block mb-8" src="flex-ui-assets/images/teams/photo-employee1.png" alt="">
+                        <img class="block mb-8" src="{{ $profile->avatar }}" alt="Photo de {{ $profile->user->firstname.' '.$profile->user->lastname  }}">
                         <span class="text-lg font-medium text-gray-500 line-clamp-2">CEO &amp; Founder CEO &amp; Founder CEO
                             &amp; FounderCEO &amp; Founder CEO &amp; Founder CEO &amp; CEO &amp; Founder Founder </span>
                     </div>

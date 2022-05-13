@@ -22,7 +22,8 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input)
     {
         Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
+            'firstname' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:255'],
             'email' => [
                 'required',
                 'string',
@@ -34,13 +35,14 @@ class CreateNewUser implements CreatesNewUsers
         ])->validate();
         
         $user = User::create([
-            'name' => $input['name'],
+            'firstname' => $input['firstname'],
+            'lastname' => $input['lastname'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
 
         Profile::create([
-            'avatar' => 'https://ui-avatars.com/api/?name='.$input['name'].'&size=256',
+            'avatar' => 'https://ui-avatars.com/api/?name='.$input['firstname'].' '.$input['lastname'].'&size=256',
             'bio' => "Nouvelle utilisateur",
             'user_id' => $user->id,
         ]);
