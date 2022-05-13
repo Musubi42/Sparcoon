@@ -1,4 +1,4 @@
-<nav class="bg-black flex justify-between p-6 px-4">
+<nav class="bg-black flex justify-between mb-6 p-6 px-4">
     <div class="flex justify-between items-center w-full flex-row">
         <div class="w-1/2 xl:w-1/3 flex">
             <a class="block max-w-max" href="#">

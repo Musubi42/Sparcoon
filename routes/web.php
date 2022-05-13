@@ -52,6 +52,10 @@ Route::get('/patrimoine', function () {
   return view('patrimoine');
 })->name('patrimoine');
 
+Route::get('/objet', function () {
+  return view('objet');
+})->name('objet');
+
 Route::get('/patient', function () {
   return view('patient');
 })->name('patient');
@@ -64,8 +68,8 @@ Route::get('/calendrier', function () {
   return view('calendrier');
 })->name('calendrier');
 
-Route::get('/profile', function(){
-    return view('auth.profile');
+Route::get('/profile', function () {
+  return view('auth.profile');
 })->name('profile')->middleware('auth');
 
 
