@@ -72,5 +72,9 @@ Route::get('/profile', function () {
   return view('auth.profile');
 })->name('profile')->middleware('auth');
 
+Route::get('/objec_show', function()
+ {
+   return view('objet_show');
+ })->name('objet_show');
 
 Route::resource('examples', ExampleController::class)->middleware('auth');
