@@ -68,8 +68,8 @@ Route::get('/calendrier', function () {
   return view('calendrier');
 })->name('calendrier');
 
-Route::get('/profile', function () {
-  return view('auth.profile');
+Route::get('/profile/{username}', function () {
+  return view('auth.profile', compact('username'));
 })->name('profile')->middleware('auth');
 
 Route::get('/objec_show', function()

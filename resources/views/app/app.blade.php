@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    @include('component.nav')
+    @include('app.nav')
     @yield('content')
     {{-- @include('component.footer') --}}
 
