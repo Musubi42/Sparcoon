@@ -1,4 +1,4 @@
-@extends('component.app')
+@extends('app.app')
 
 @section('title')
     Créer objet
