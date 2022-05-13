@@ -46,4 +46,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Example::class);
     }
+
+    public function patrimoines()
+    {
+        return $this->hasMany(Patrimoine::class);
+    }
+
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
+    }
 }
