@@ -9,13 +9,14 @@
         <div class="text-center">
             <h1
                 class="mb-10 mx-auto text-3xl md:text-4xl leading-tight text-coolGray-900 font-bold tracking-tighter max-w-5xl">
-                Modifier objet</h1>
+                Créer objet</h1>
         </div>
         <div class="container px-4 mx-auto">
             <div
                 class="flex flex-wrap p-8 text-center md:text-left hover:bg-white rounded-md hover:shadow-xl transition duration-200">
                 <div class="w-full md:w-auto mb-6 md:mb-0 md:pr-6">
-                    <div class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-red-500 rounded-lg">
+                    <div
+                        class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-green-700 rounded-lg">
                         <svg width="21" height="21" viewBox="0 0 640 512" fill="white" xmlns="http://www.w3.org/2000/svg">
                             {{-- Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
                             <path
@@ -35,7 +36,8 @@
             <div
                 class="flex flex-wrap p-8 text-center md:text-left hover:bg-white rounded-md hover:shadow-xl transition duration-200">
                 <div class="w-full md:w-auto mb-6 md:mb-0 md:pr-6">
-                    <div class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-red-500 rounded-lg">
+                    <div
+                        class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-green-700 rounded-lg">
                         <svg width="21" height="21" viewBox="0 0 384 512" fill="white" xmlns="http://www.w3.org/2000/svg">
                             {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
                             <path d="M384 48V512l-192-112L0 512V48C0 21.5 21.5 0 48 0h288C362.5 0 384 21.5 384 48z" />
@@ -58,7 +60,8 @@
             <div
                 class="flex flex-wrap p-8 text-center md:text-left hover:bg-white rounded-md hover:shadow-xl transition duration-200">
                 <div class="w-full md:w-auto mb-6 md:mb-0 md:pr-6">
-                    <div class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-red-500 rounded-lg">
+                    <div
+                        class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-green-700 rounded-lg">
                         <svg width="21" height="21" viewBox="0 0 448 512" fill="white" xmlns="http://www.w3.org/2000/svg">
                             {{-- Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
                             <path
@@ -76,7 +79,8 @@
             <div
                 class="flex flex-wrap p-8 text-center md:text-left hover:bg-white rounded-md hover:shadow-xl transition duration-200">
                 <div class="w-full md:w-auto mb-6 md:mb-0 md:pr-6">
-                    <div class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-red-500 rounded-lg">
+                    <div
+                        class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-green-700 rounded-lg">
                         <svg width="21" height="21" viewBox="0 0 384 512" fill="white" xmlns="http://www.w3.org/2000/svg">
                             {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
                             <path
@@ -96,7 +100,8 @@
             <div
                 class="flex flex-wrap p-8 text-center md:text-left hover:bg-white rounded-md hover:shadow-xl transition duration-200">
                 <div class="w-full md:w-auto mb-6 md:mb-0 md:pr-6">
-                    <div class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-red-500 rounded-lg">
+                    <div
+                        class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-green-700 rounded-lg">
                         <svg width="21" height="21" viewBox="0 0 448 512" fill="white" xmlns="http://www.w3.org/2000/svg">
                             {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
                             <path
