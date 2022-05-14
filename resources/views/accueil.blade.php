@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-16"
-                    onclick="window.location.href='{{ route('patrimoine') }}'">
+                    onclick="window.location.href='{{ route('patrimoines.index') }}'">
                     <div class="group h-full">
                         <div
                             class="group relative h-full px-8 pt-16 pb-8 bg-coolGray-50 group-hover:bg-white rounded-md shadow-md hover:shadow-xl transition duration-200">

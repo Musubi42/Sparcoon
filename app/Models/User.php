@@ -49,7 +49,7 @@ class User extends Authenticatable
         return $this->hasMany(Example::class);
     }
 
-    public function patrimoines()
+    public function patrimoine()
     {
         return $this->hasOne(Patrimoine::class);
     }

@@ -13,6 +13,8 @@ class objectEstate extends Model
         'name',
         'date_acquisition',
         'value',
+        'categorie_id',
+        'patrimoine_id',
         'description',
     ];
     

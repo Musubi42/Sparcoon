@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\Patrimoine;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -44,6 +45,12 @@ class CreateNewUser implements CreatesNewUsers
         Profile::create([
             'avatar' => 'https://ui-avatars.com/api/?name='.$input['firstname'].' '.$input['lastname'].'&size=256',
             'bio' => "Nouvelle utilisateur",
+            'user_id' => $user->id,
+        ]);
+
+        Patrimoine::create([
+            'name' => "Patrimoine de ".$input['firstname'].' '.$input['lastname'],
+            'description' => "Patrimoine de ".$input['firstname'].' '.$input['lastname'],
             'user_id' => $user->id,
         ]);
 
