@@ -46,7 +46,7 @@ Route::get('/traitement', function () {
 })->name('traitement');
 
 Route::get('/intervenant', function () {
-  return view('intervenant');
+  return view('intervenant.intervenant');
 })->name('intervenant');
 
 Route::get('/patrimoine', function () {
