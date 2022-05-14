@@ -51,7 +51,7 @@ class User extends Authenticatable
 
     public function patrimoines()
     {
-        return $this->hasMany(Patrimoine::class);
+        return $this->hasOne(Patrimoine::class);
     }
 
     public function images()

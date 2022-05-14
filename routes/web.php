@@ -23,59 +23,61 @@ Route::get('/profil', function () {
   return view('auth.home');
 })->name('profil')->middleware('auth');
 
-Route::get('/patrimoine', function () {
-  return view('patrimoine');
-})->name('pat');
+Route::middleware('auth')->group(function () {
+  Route::get('/patrimoine', function () {
+    return view('patrimoine');
+  })->name('pat');
 
-Route::get('/depenses', function () {
-  return view('depenses');
-})->name('dep');
+  Route::get('/depenses', function () {
+    return view('depenses');
+  })->name('dep');
 
-Route::get('/traitements', function () {
-  return view('traitements');
-})->name('trait');
+  Route::get('/traitements', function () {
+    return view('traitements');
+  })->name('trait');
 
-Route::get('/calendrier', function () {
-  return view('calendrier');
-})->name('cal');
+  Route::get('/calendrier', function () {
+    return view('calendrier');
+  })->name('cal');
 
-// TODO : Les routes ci-dessous sont a créer
+  // TODO : Les routes ci-dessous sont a créer
 
-Route::get('/traitement', function () {
-  return view('traitement');
-})->name('traitement');
+  Route::get('/traitement', function () {
+    return view('traitement');
+  })->name('traitement');
 
-Route::get('/intervenant', function () {
-  return view('intervenant');
-})->name('intervenant');
+  Route::get('/intervenant', function () {
+    return view('intervenant');
+  })->name('intervenant');
 
-Route::get('/patrimoine', function () {
-  return view('patrimoine');
-})->name('patrimoine');
+  Route::get('/patrimoine', function () {
+    return view('patrimoine');
+  })->name('patrimoine');
 
-Route::get('/objet_show', function () {
-  return view('objet_show');
-})->name('objet_show');
+  Route::get('/objet_show', function () {
+    return view('objet_show');
+  })->name('objet_show');
 
-Route::get('/objet_modify', function () {
-  return view('objet_modify');
-})->name('objet_modify');
+  Route::get('/objet_modify', function () {
+    return view('objet_modify');
+  })->name('objet_modify');
 
-Route::get('/objet_create', function () {
-  return view('objet_create');
-})->name('objet_create');
+  Route::get('/objet_create', function () {
+    return view('objet_create');
+  })->name('objet_create');
 
-Route::get('/patient', function () {
-  return view('patient');
-})->name('patient');
+  Route::get('/patient', function () {
+    return view('patient');
+  })->name('patient');
 
-Route::get('/vehicule', function () {
-  return view('vehicule');
-})->name('vehicule');
+  Route::get('/vehicule', function () {
+    return view('vehicule');
+  })->name('vehicule');
 
-Route::get('/calendrier', function () {
-  return view('calendrier');
-})->name('calendrier');
+  Route::get('/calendrier', function () {
+    return view('calendrier');
+  })->name('calendrier');
+});
 
 Route::get('/profile/{userId}', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');
 

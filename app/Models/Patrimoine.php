@@ -11,23 +11,18 @@ class Patrimoine extends Model
 
 
     protected $fillable = [
-        'name',
-        'date_acquisition',
-        'value',
         'description',
+        'user_id',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-    public function categorie()
+
+    public function objectEstates()
     {
-        return $this->hasOne(Category::class);
+        return $this->hasMany(ObjectEstate::class);
     }
 
-    public function images()
-    {
-        return $this->morphMany(Image::class, 'imageable');
-    }
 }

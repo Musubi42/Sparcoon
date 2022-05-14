@@ -14,8 +14,8 @@ class Categorie extends Model
         'description',
     ];
 
-    public function patrimoines()
-    {
-        return $this->belongsToMany(Patrimoine::class);
-    }
+   public function objectEstates()
+   {
+       return $this->hasMany(ObjectEstate::class);
+   }
 }
