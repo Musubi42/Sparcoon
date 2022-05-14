@@ -129,4 +129,6 @@
             </tr>
         </tbody>
     </table>
+
+    {{-- Modal --}}
 @endsection
