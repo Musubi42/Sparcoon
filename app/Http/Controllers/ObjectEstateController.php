@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\objectEstate;
 use App\Http\Requests\StoreobjectEstateRequest;
 use App\Http\Requests\UpdateobjectEstateRequest;
+use Illuminate\Support\Facades\Validator;
 
 class ObjectEstateController extends Controller
 {
@@ -15,7 +16,8 @@ class ObjectEstateController extends Controller
      */
     public function index()
     {
-        //
+        $objectEstates = objectEstate::all();
+        return view('patrimoine.patrimoine', compact('objectEstates'));
     }
 
     /**
@@ -25,7 +27,7 @@ class ObjectEstateController extends Controller
      */
     public function create()
     {
-        //
+        return view('patrimoine.objet_create');
     }
 
     /**
@@ -36,7 +38,18 @@ class ObjectEstateController extends Controller
      */
     public function store(StoreobjectEstateRequest $request)
     {
-        //
+        Validator::make($request->all())->validated();
+
+        $objectEstate = new objectEstate([
+            'name' => $request->name,
+            'description' => $request->description,
+            'date_acquisition' => $request->date_acquisition,
+            'value' => $request->value,
+        ]);
+
+        $objectEstate->save();
+        
+        return redirect('/patrimoine')->with('success', 'Objet créé avec succès');
     }
 
     /**
