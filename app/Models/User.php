@@ -65,13 +65,17 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
-    public function patients()
+    public function patients(User $user)
     {
-        return $this->belongsToMany(User::class, 'soignants', 'soignant_id', 'user_id');
+        if($user->hasRole('soignant')) {
+            return $this->belongsToMany(User::class, 'soignants', 'soignant_id', 'user_id');
+        }
     }
 
-    public function soignants()
+    public function soignants(User $user)
     {
-        return $this->belongsToMany(User::class, 'soignants', 'user_id', 'soignant_id');
+        if($user->hasRole('patient')) {
+            return $this->belongsToMany(User::class, 'soignants', 'user_id', 'soignant_id');
+        }
     }
 }
