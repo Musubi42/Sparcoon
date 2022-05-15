@@ -49,6 +49,18 @@ Route::get('/intervenant', function () {
   return view('intervenant.intervenant');
 })->name('intervenant');
 
+Route::get('/intervenant_show', function () {
+  return view('intervenant.intervenant_show');
+})->name('intervenant');
+
+Route::get('/intervenant', function () {
+  return view('intervenant.intervenant_modify');
+})->name('intervenant');
+
+Route::get('/intervenant', function () {
+  return view('intervenant.intervenant_create');
+})->name('intervenant');
+
 Route::get('/patrimoine', function () {
   return view('patrimoine.patrimoine');
 })->name('patrimoine');
