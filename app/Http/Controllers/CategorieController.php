@@ -25,7 +25,9 @@ class CategorieController extends Controller
      */
     public function create()
     {
-        //
+        if(auth()->user()->hasPermissionTo('categorie.create')){
+            return view('categorie.create');
+        }
     }
 
     /**
@@ -36,7 +38,7 @@ class CategorieController extends Controller
      */
     public function store(StoreCategorieRequest $request)
     {
-        //
+        
     }
 
     /**
