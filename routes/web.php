@@ -86,7 +86,7 @@ Route::get('/profile/{userId}', [ProfileController::class, 'show'])->name('profi
 
 Route::resource('examples', ExampleController::class)->middleware('auth');
 
-Route::get('/init/{id}', [PermissionGestureController::class, 'index'])->name('permission.index')->middleware('auth');
+Route::get('/init/{id}/{role}', [PermissionGestureController::class, 'index'])->name('permission.index')->middleware('auth');
 
 
 // Permissions gestions
