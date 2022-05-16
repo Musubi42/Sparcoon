@@ -18,8 +18,6 @@ class PermissionGestureController extends Controller
     {
         $user = User::findOrFail($id);
         $role = Role::findOrFail(2);
-        $role->givePermissionTo('object.create');
-        $role->givePermissionTo('patrimoine.index');
         $user->assignRole($role);
 
         return redirect()->route('accueil')->with('success', 'Le rôle a bien été assigné.');
