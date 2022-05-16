@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+    {{-- TODO : Ajouter les dépenses --}}
     <section class="py-24 md:pt-32 bg-white"
         style="background-image: url('flex-ui-assets/elements/pattern-white.svg'); background-position: center;">
         <div class="container px-4 mx-auto">
