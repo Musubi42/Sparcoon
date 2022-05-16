@@ -6,13 +6,16 @@
 
 @section('content')
     {{-- TODO : Ajouter les dépenses --}}
+
     <section class="py-24 md:pt-32 bg-white"
         style="background-image: url('flex-ui-assets/elements/pattern-white.svg'); background-position: center;">
+
         <div class="container px-4 mx-auto">
+
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="mb-40 text-4xl md:text-5xl leading-tight text-coolGray-900 font-bold tracking-tighter">Bonjour
-                    {{ auth()->user()->name }}</h2>
-
+                    {{ auth()->user()->firstname . ' ' . auth()->user()->lastname }}
+                </h2>
             </div>
             <div class="flex flex-wrap -mx-4">
 
@@ -66,7 +69,7 @@
                 </div>
 
                 <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-16"
-                    onclick="window.location.href='{{ route('patrimoine') }}'">
+                    onclick="window.location.href='{{ route('patrimoines.index') }}'">
                     <div class="group h-full">
                         <div
                             class="group relative h-full px-8 pt-16 pb-8 bg-coolGray-50 group-hover:bg-white rounded-md shadow-md hover:shadow-xl transition duration-200">

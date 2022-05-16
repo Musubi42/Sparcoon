@@ -7,32 +7,29 @@
 @section('content')
     <section class="container px-4 mx-auto">
         <div class="text-center">
-            <h1
-                class="mb-10 mx-auto text-3xl md:text-4xl leading-tight text-coolGray-900 font-bold tracking-tighter max-w-5xl">
-                Créer objet</h1>
+            <h1 class="mb-10 mx-auto text-3xl md:text-4xl leading-tight text-coolGray-900 font-bold tracking-tighter max-w-5xl">
+                Créer objet
+            </h1>
         </div>
         <div class="container px-4 mx-auto">
-            <div
-                class="flex flex-wrap p-8 text-center md:text-left hover:bg-white rounded-md hover:shadow-xl transition duration-200">
+            <form action="{{ route('objectEstates.store') }}" method="post">
+                @csrf
+            <div class="flex flex-wrap p-8 text-center md:text-left hover:bg-white rounded-md hover:shadow-xl transition duration-200">
                 <div class="w-full md:w-auto mb-6 md:mb-0 md:pr-6">
-                    <div
-                        class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-green-700 rounded-lg">
+                    <div class="inline-flex h-14 w-14 mx-auto items-center justify-center text-white bg-green-700 rounded-lg">
                         <svg width="21" height="21" viewBox="0 0 640 512" fill="white" xmlns="http://www.w3.org/2000/svg">
                             {{-- Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
-                            <path
-                                d="M192 160C192 177.7 177.7 192 160 192C142.3 192 128 177.7 128 160V128C128 74.98 170.1 32 224 32C277 32 320 74.98 320 128V135.8C320 156.6 318.8 177.4 316.4 198.1L438.8 161.3C450.2 157.9 462.6 161.1 470.1 169.7C479.3 178.3 482.1 190.8 478.4 202.1L460.4 255.1H544C561.7 255.1 576 270.3 576 287.1C576 305.7 561.7 319.1 544 319.1H416C405.7 319.1 396.1 315.1 390 306.7C384 298.4 382.4 287.6 385.6 277.9L398.1 240.4L303.7 268.7C291.9 321.5 272.2 372.2 245.3 419.2L231.4 443.5C218.5 466.1 194.5 480 168.5 480C128.5 480 95.1 447.5 95.1 407.5V335.6C95.1 293.2 123.8 255.8 164.4 243.7L248.8 218.3C253.6 191.1 255.1 163.5 255.1 135.8V128C255.1 110.3 241.7 96 223.1 96C206.3 96 191.1 110.3 191.1 128L192 160zM160 335.6V407.5C160 412.2 163.8 416 168.5 416C171.5 416 174.4 414.4 175.9 411.7L189.8 387.4C207.3 356.6 221.4 324.1 231.8 290.3L182.8 304.1C169.3 309 160 321.5 160 335.6V335.6zM24 368H64V407.5C64 410.4 64.11 413.2 64.34 416H24C10.75 416 0 405.3 0 392C0 378.7 10.75 368 24 368zM616 416H283.5C291.7 400.3 299.2 384.3 305.9 368H616C629.3 368 640 378.7 640 392C640 405.3 629.3 416 616 416z" />
+                            <path d="M192 160C192 177.7 177.7 192 160 192C142.3 192 128 177.7 128 160V128C128 74.98 170.1 32 224 32C277 32 320 74.98 320 128V135.8C320 156.6 318.8 177.4 316.4 198.1L438.8 161.3C450.2 157.9 462.6 161.1 470.1 169.7C479.3 178.3 482.1 190.8 478.4 202.1L460.4 255.1H544C561.7 255.1 576 270.3 576 287.1C576 305.7 561.7 319.1 544 319.1H416C405.7 319.1 396.1 315.1 390 306.7C384 298.4 382.4 287.6 385.6 277.9L398.1 240.4L303.7 268.7C291.9 321.5 272.2 372.2 245.3 419.2L231.4 443.5C218.5 466.1 194.5 480 168.5 480C128.5 480 95.1 447.5 95.1 407.5V335.6C95.1 293.2 123.8 255.8 164.4 243.7L248.8 218.3C253.6 191.1 255.1 163.5 255.1 135.8V128C255.1 110.3 241.7 96 223.1 96C206.3 96 191.1 110.3 191.1 128L192 160zM160 335.6V407.5C160 412.2 163.8 416 168.5 416C171.5 416 174.4 414.4 175.9 411.7L189.8 387.4C207.3 356.6 221.4 324.1 231.8 290.3L182.8 304.1C169.3 309 160 321.5 160 335.6V335.6zM24 368H64V407.5C64 410.4 64.11 413.2 64.34 416H24C10.75 416 0 405.3 0 392C0 378.7 10.75 368 24 368zM616 416H283.5C291.7 400.3 299.2 384.3 305.9 368H616C629.3 368 640 378.7 640 392C640 405.3 629.3 416 616 416z" />
                         </svg>
                     </div>
                 </div>
                 <div class="w-full md:flex-1 md:pt-3">
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Nom de l'objet</h3>
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
-                    <input
-                        class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
-                        type="text" placeholder="Nom de l'objet" required="">
+                    <input name="name" class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none" type="text" placeholder="Nom de l'objet" required="">
                 </div>
             </div>
-
+            <input type="hidden" name="patrimoine_id" value="{{ auth()->user()->patrimoine->id }}">
             <div
                 class="flex flex-wrap p-8 text-center md:text-left hover:bg-white rounded-md hover:shadow-xl transition duration-200">
                 <div class="w-full md:w-auto mb-6 md:mb-0 md:pr-6">
@@ -48,11 +45,13 @@
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Catégorie</h3>
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
                     <select
-                        class="appearance-none block py-3 px-4 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none">
+                        class="appearance-none block py-3 px-4 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none" name='categorie_id'>
+                        
+                        @forelse ($categories as $cat)
+                            <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                        @empty
                         <option>Sélectionner une catégorie</option>
-                        <option>Catégorie 1</option>
-                        <option>Catégorie 2</option>
-                        <option>Catégorie 3</option>
+                        @endforelse
                     </select>
                 </div>
             </div>
@@ -73,7 +72,7 @@
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Date d'achat</h3>
                     <input
                         class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
-                        type="date" id="buyDate" name="date d'achat">
+                        type="date" id="buyDate" name="date_acquisition">
                 </div>
             </div>
             <div
@@ -92,6 +91,7 @@
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Valeur</h3>
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
                     <input
+                        name="value" step="0.01"
                         class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
                         type="number" placeholder="Prix de l'objet">
                 </div>
@@ -112,11 +112,12 @@
                 <div class="w-full md:flex-1 md:pt-3">
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Description</h3>
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
-                    <textarea class="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
-                        placeholder="Description de l'objet" rows="5"></textarea>
+                    <textarea name="description"class="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none" placeholder="Description de l'objet" rows="5"></textarea>
                 </div>
             </div>
 
+            <button type="submit">Enregistrer</button>
+        </form>
             <div class="my-12"></div>
             <hr>
 

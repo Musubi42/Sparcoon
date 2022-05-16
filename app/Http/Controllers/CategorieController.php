@@ -25,7 +25,11 @@ class CategorieController extends Controller
      */
     public function create()
     {
-        //
+        if(auth()->user()->hasPermissionTo('categorie.create')){
+            return view('categorie.create');
+        }
+
+        return redirect()->route('accueil')->with('error', 'Vous n\'avez pas le droit d\'accéder à cette page');
     }
 
     /**
@@ -36,7 +40,7 @@ class CategorieController extends Controller
      */
     public function store(StoreCategorieRequest $request)
     {
-        //
+        
     }
 
     /**

@@ -16,9 +16,8 @@ return new class extends Migration
         Schema::create('patrimoines', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->date('date_acquisition');
-            $table->float('value');
             $table->string('description');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

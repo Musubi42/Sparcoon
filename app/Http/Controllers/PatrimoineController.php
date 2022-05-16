@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Patrimoine;
 use App\Http\Requests\StorePatrimoineRequest;
 use App\Http\Requests\UpdatePatrimoineRequest;
+use Illuminate\Support\Facades\Validator;
 
 class PatrimoineController extends Controller
 {
@@ -15,7 +16,7 @@ class PatrimoineController extends Controller
      */
     public function index()
     {
-        //
+        return redirect()->route('objectEstates.index');
     }
 
     /**
@@ -36,7 +37,18 @@ class PatrimoineController extends Controller
      */
     public function store(StorePatrimoineRequest $request)
     {
-        //
+        Validator::make($request->all())->validated();
+
+        $patrimoine = new Patrimoine([
+            'name' => $request->name,
+            'description' => $request->description,
+            'date_acquisition' => $request->date_acquisition,
+            'value' => $request->value,
+        ]);
+
+        $patrimoine->save();
+
+        return redirect('/patrimoine')->with('success', 'Patrimoine créé avec succès');
     }
 
     /**
@@ -47,7 +59,7 @@ class PatrimoineController extends Controller
      */
     public function show(Patrimoine $patrimoine)
     {
-        //
+        return view('patrimoine.patrimoine', compact('patrimoine'));
     }
 
     /**

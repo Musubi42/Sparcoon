@@ -8,10 +8,11 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -49,9 +50,9 @@ class User extends Authenticatable
         return $this->hasMany(Example::class);
     }
 
-    public function patrimoines()
+    public function patrimoine()
     {
-        return $this->hasMany(Patrimoine::class);
+        return $this->hasOne(Patrimoine::class);
     }
 
     public function images()
@@ -62,5 +63,19 @@ class User extends Authenticatable
     public function profile()
     {
         return $this->hasOne(Profile::class);
+    }
+
+    public function patients(User $user)
+    {
+        if($user->hasRole('soignant')) {
+            return $this->belongsToMany(User::class, 'soignants', 'soignant_id', 'user_id');
+        }
+    }
+
+    public function soignants(User $user)
+    {
+        if($user->hasRole('patient')) {
+            return $this->belongsToMany(User::class, 'soignants', 'user_id', 'soignant_id');
+        }
     }
 }

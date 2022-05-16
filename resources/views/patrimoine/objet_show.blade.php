@@ -30,8 +30,7 @@
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
                     <div class="flex place-content-between">
                         <span id="objectName"
-                            class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">Je
-                            suis un nom d'objet</span>
+                            class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">{{ $objectEstate->name }}</span>
                         <button>
                             <svg width="42" height="42" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                 {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
@@ -59,8 +58,7 @@
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
                     <div class="flex place-content-between">
                         <span id="objectName"
-                            class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">Je
-                            suis un nom d'objet</span>
+                            class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">{{ $objectEstate->categorie->name }}</span>
                         <button>
                             <svg width="42" height="42" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                 {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
@@ -88,8 +86,7 @@
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Date d'achat</h3>
                     <div class="flex place-content-between">
                         <span id="objectName"
-                            class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">Je
-                            suis un nom d'objet</span>
+                            class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">{{ $objectEstate->date_acquisition }}</span>
                         <button>
                             <svg width="42" height="42" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                 {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
@@ -118,8 +115,7 @@
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
                     <div class="flex place-content-between">
                         <span id="objectName"
-                            class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">Je
-                            suis un nom d'objet</span>
+                            class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">{{ $objectEstate->value }} €</span>
                         <button>
                             <svg width="42" height="42" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                 {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
@@ -149,8 +145,7 @@
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
                     <div class="flex place-content-between">
                         <span id="objectName"
-                            class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">Je
-                            suis un nom d'objet</span>
+                            class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 border-gray-200">{{ $objectEstate->description }}</span>
                         <button>
                             <svg width="42" height="42" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                 {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
