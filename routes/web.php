@@ -60,6 +60,7 @@ Route::middleware('auth')->group(function () {
   Route::get('/intervenant_create', function () {
     return view('intervenant.intervenant_create');
   })->name('intervenant');
+
   // Route::get('/traitement', function () {
   //   return view('traitement');
   // })->name('traitement');
@@ -102,5 +103,3 @@ Route::get('/profile/{userId}', [ProfileController::class, 'show'])->name('profi
 Route::resource('examples', ExampleController::class)->middleware('auth');
 
 Route::get('/init/{id}', [PermissionGestureController::class, 'index'])->name('permission.index')->middleware('auth');
-
-Route::get('/permissions/create', [PermissionGestureController::class, 'createPermissions'])->name('permission.default')->middleware('auth');
