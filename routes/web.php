@@ -53,6 +53,14 @@ Route::middleware('auth')->group(function () {
     return view('intervenant');
   })->name('intervenant');
 
+  Route::get('/intervenant_create', function () {
+    return view('intervenant.create');
+  })->name('intervenant_create');
+
+  Route::get('/traitement_show', function () {
+    return view('traitement.show');
+  })->name('traitement_show');
+
   // Route::get('/patrimoine', function () {
   //   return view('patrimoine.patrimoine');
   // })->name('patrimoine');
