@@ -8,6 +8,18 @@ use App\Http\Requests\UpdateExampleRequest;
 
 class ExampleController extends Controller
 {
+     /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('can:image.create')->only('create');
+        $this->middleware('can:image.update')->only('edit');
+        $this->middleware('can:image.delete')->only('destroy');
+    }
+
     /**
      * Display a listing of the resource.
      *
