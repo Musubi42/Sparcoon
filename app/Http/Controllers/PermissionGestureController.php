@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class PermissionGestureController extends Controller
 {
@@ -24,6 +25,25 @@ class PermissionGestureController extends Controller
         return redirect()->route('accueil')->with('success', 'Le rôle a bien été assigné.');
     }
 
+    public function createPermissions()
+    {
+      
+            Permission::create(['name'=>'categorie.create']);
+            Permission::create(['name'=>'categorie.update']);
+            Permission::create(['name'=>'categorie.show']);
+            Permission::create(['name'=>'categorie.delete']);
+            Permission::create(['name'=>'image.create']);
+            Permission::create(['name'=>'image.update']);
+            Permission::create(['name'=>'image.show']);
+            Permission::create(['name'=>'image.delete']);
+            Permission::create(['name'=>'object.create']);
+            Permission::create(['name'=>'object.update']);
+            Permission::create(['name'=>'object.show']);
+            Permission::create(['name'=>'object.delete']);
+            Permission::create(['name'=>'patrimoine.index']);
+        
+        return redirect()->route('accueil')->with('success', 'Les permissions par défaut ont été initialisées.');
+    }
     /**
      * Show the form for creating a new resource.
      *
