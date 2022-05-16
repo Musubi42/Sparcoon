@@ -15,14 +15,9 @@
         <div class="flex justify-between items-center flex-shrink-0">
 
             @can('object.create')
-                {{-- <div class="w-full md:w-auto py-1 md:py-0 md:mr-6"><a
-                        class="inline-block text-base md:text-lg leading-4 font-medium text-center focus:ring-2 border shadow-sm rounded-full py-3 px-3 text-white border-green-700 bg-green-700 hover:bg-green-800 focus:ring-green-600 whitespace-nowrap"
-                        href="{{ route('objectEstates.create') }}">+ Ajouter</a></div> --}}
-
                 <a href="{{ route('objectEstates.create') }}">
                     <button
-                        class="inline-flex h-14 w-auto mx-4 items-center justify-start text-white bg-green-700 rounded-lg pr-4"
-                        disabled>
+                        class="inline-flex h-14 w-auto mx-4 items-center justify-start text-white bg-green-700 rounded-lg pr-4">
                         <div class="mx-4">
                             <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 448 512">
                                 {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
