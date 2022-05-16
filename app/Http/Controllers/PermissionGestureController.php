@@ -14,10 +14,10 @@ class PermissionGestureController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
-  public function index(int $id)
+  public function index(int $id, int $role)
   {
     $user = User::findOrFail($id);
-    $role = Role::findOrFail(2);
+    $role = Role::findOrFail($role);
     $user->assignRole($role);
 
     return redirect()->route('accueil')->with('success', 'Le rôle a bien été assigné.');
@@ -58,12 +58,12 @@ class PermissionGestureController extends Controller
 
 
     // Assign permissions to roles
-    $ceo->givePermissionTo(['categorie.create', 'categorie.update', 'categorie.show', 'categorie.delete', 'image.create', 'image.update', 'image.show', 'image.delete', 'object.create', 'object.update', 'object.show', 'object.delete', 'patrimoine.index']);
+    $ceo->givePermissionTo(['categorie.create', 'categorie.update', 'categorie.show', 'categorie.delete', 'image.create', 'image.update', 'image.show', 'image.delete', 'object.create', 'object.update', 'object.show', 'object.delete', 'patrimoine.index', 'intervenant.index']);
     $soignant->givePermissionTo([
-      'categorie.create', 'categorie.update', 'categorie.show', 'categorie.delete', 'image.create', 'image.update', 'image.show', 'image.delete', 'object.create', 'object.update', 'object.show', 'object.delete', 'patrimoine.index'
+      'categorie.create', 'categorie.update', 'categorie.show', 'categorie.delete', 'image.create', 'image.update', 'image.show', 'image.delete', 'object.create', 'object.update', 'object.show', 'object.delete', 'patrimoine.index', 'intervenant.index'
     ]);
     $patient->givePermissionTo([
-      'categorie.show', 'image.show', 'object.show',  'patrimoine.index'
+      'categorie.show', 'image.show', 'object.show',  'patrimoine.index', 'intervenant.index'
     ]);
     return redirect()->route('accueil')->with('success', 'Les permissions par défaut ont été initialisées ainsi que les rôles.');
   }
