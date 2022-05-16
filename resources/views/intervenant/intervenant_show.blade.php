@@ -5,9 +5,8 @@
 @endsection
 
 @section('content')
-    <section class="container flex h-full flex-row bg-gray-50 p-6">
+    <section class="flex h-full flex-row bg-gray-50 p-6">
         <section class="w-1/5">
-            les icones(retour), photo, nom, prenom, role/profession
             <div class="flex justify-center">
                 <img src="placeholders/pictures/office.jpg" alt="" class="shadow-md h-60 w-60" style="border-radius: 50%;"
                     title="">
