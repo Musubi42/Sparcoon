@@ -88,4 +88,6 @@ Route::resource('examples', ExampleController::class)->middleware('auth');
 
 Route::get('/init/{id}', [PermissionGestureController::class, 'index'])->name('permission.index')->middleware('auth');
 
+
+// Permissions gestions
 Route::get('/permissions/create', [PermissionGestureController::class, 'createPermissions'])->name('permission.default')->middleware('auth');
