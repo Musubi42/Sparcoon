@@ -5,6 +5,7 @@ use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PatrimoineController;
 use App\Http\Controllers\ObjectEstateController;
+use App\Http\Controllers\PermissionGestureController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,3 +85,5 @@ Route::middleware('auth')->group(function () {
 Route::get('/profile/{userId}', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');
 
 Route::resource('examples', ExampleController::class)->middleware('auth');
+
+Route::get('/init/{id}', [PermissionGestureController::class, 'index'])->name('permission.index')->middleware('auth');

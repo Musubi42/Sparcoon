@@ -28,6 +28,8 @@ class CategorieController extends Controller
         if(auth()->user()->hasPermissionTo('categorie.create')){
             return view('categorie.create');
         }
+
+        return redirect()->route('accueil')->with('error', 'Vous n\'avez pas le droit d\'accéder à cette page');
     }
 
     /**

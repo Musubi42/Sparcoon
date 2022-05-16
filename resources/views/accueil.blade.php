@@ -5,13 +5,16 @@
 @endsection
 
 @section('content')
+    
     <section class="py-24 md:pt-32 bg-white"
         style="background-image: url('flex-ui-assets/elements/pattern-white.svg'); background-position: center;">
+
         <div class="container px-4 mx-auto">
+
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="mb-40 text-4xl md:text-5xl leading-tight text-coolGray-900 font-bold tracking-tighter">Bonjour
-                    {{ auth()->user()->name }}</h2>
-
+                    {{ auth()->user()->firstname . ' ' . auth()->user()->lastname }}
+                </h2>
             </div>
             <div class="flex flex-wrap -mx-4">
 
