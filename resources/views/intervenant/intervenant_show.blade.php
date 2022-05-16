@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <section class="container flex h-screen flex-row bg-gray-50 p-6">
+    <section class="container flex h-full flex-row bg-gray-50 p-6">
         <section class="w-1/5">
             les icones(retour), photo, nom, prenom, role/profession
             <div class="flex justify-center">
@@ -181,7 +181,7 @@
                 </div>
             </div>
 
-            <div class="bg-white drop-shadow-md px-4 mb-4 flex">
+            <div class="bg-white drop-shadow-md p-4 mb-4 flex">
                 <div class="flex flex-col w-full h-full">
                     <h3 class="text-5xl mt-2 mb-6 leading-tight font-heading">Description</h3>
                     <hr>
