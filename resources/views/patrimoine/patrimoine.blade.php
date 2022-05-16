@@ -14,23 +14,25 @@
 
         <div class="flex justify-between items-center flex-shrink-0">
 
-            <div class="">
-                <div class="inline-flex h-14 w-auto mx-4 items-center justify-start text-white bg-green-700 rounded-lg pr-4">
-                    <div class="mx-4">
-                        <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 448 512">
-                            {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
-                            <path
-                                d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z" />
-                        </svg>
-                    </div>
-                    <span class="whitespace-nowrap font-semibold text-2xl">Ajouter un objet</span>
-                </div>
-            </div>
-
             @can('object.create')
-                <div class="w-full md:w-auto py-1 md:py-0 md:mr-6"><a
+                {{-- <div class="w-full md:w-auto py-1 md:py-0 md:mr-6"><a
                         class="inline-block text-base md:text-lg leading-4 font-medium text-center focus:ring-2 border shadow-sm rounded-full py-3 px-3 text-white border-green-700 bg-green-700 hover:bg-green-800 focus:ring-green-600 whitespace-nowrap"
-                        href="{{ route('objectEstates.create') }}">+ Ajouter</a></div>
+                        href="{{ route('objectEstates.create') }}">+ Ajouter</a></div> --}}
+
+                <a href="{{ route('objectEstates.create') }}">
+                    <button
+                        class="inline-flex h-14 w-auto mx-4 items-center justify-start text-white bg-green-700 rounded-lg pr-4"
+                        disabled>
+                        <div class="mx-4">
+                            <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 448 512">
+                                {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
+                                <path
+                                    d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z" />
+                            </svg>
+                        </div>
+                        <span class="whitespace-nowrap font-semibold text-2xl">Ajouter un objet</span>
+                    </button>
+                </a>
             @endcan
 
             <input
