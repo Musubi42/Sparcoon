@@ -41,8 +41,19 @@ class PermissionGestureController extends Controller
             Permission::create(['name'=>'object.show']);
             Permission::create(['name'=>'object.delete']);
             Permission::create(['name'=>'patrimoine.index']);
-        
-        return redirect()->route('accueil')->with('success', 'Les permissions par défaut ont été initialisées.');
+
+            $ceo = Role::create(['name'=>'CEO']);
+            $soignant = Role::create(['name'=>'Soignant']);
+            $patient = Role::create(['name'=>'Patient']);
+
+            $ceo->givePermissionTo(['categorie.create', 'categorie.update', 'categorie.show', 'categorie.delete', 'image.create', 'image.update', 'image.show', 'image.delete', 'object.create', 'object.update', 'object.show', 'object.delete', 'patrimoine.index']);
+            $soignant->givePermissionTo([
+                'categorie.create', 'categorie.update', 'categorie.show', 'categorie.delete', 'image.create', 'image.update', 'image.show', 'image.delete', 'object.create', 'object.update', 'object.show', 'object.delete', 'patrimoine.index'
+            ]);
+            $patient->givePermissionTo([
+                'categorie.show','image.show', 'object.show',  'patrimoine.index'
+            ]);
+        return redirect()->route('accueil')->with('success', 'Les permissions par défaut ont été initialisées ainsi que les rôles.');
     }
     /**
      * Show the form for creating a new resource.
