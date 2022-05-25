@@ -40,7 +40,16 @@ class CategorieController extends Controller
      */
     public function store(StoreCategorieRequest $request)
     {
-        
+        $validated = $request->validated();
+
+        $categorie = new Categorie([
+            'name' => $request->name,
+            'description' => $request->description,
+        ]);
+
+        $categorie->save();
+
+        return redirect()->route('accueil')->with('success', 'Catégorie créée avec succès');
     }
 
     /**
