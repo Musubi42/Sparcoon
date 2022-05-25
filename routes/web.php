@@ -63,8 +63,6 @@ Route::get('/vehicule', function () {
 Route::get('/calendrier', function () {
   return view('calendrier');
 })->name('calendrier');
-    return view('welcome');
-});
 
 Route::get('/profile', function(){
     return view('auth.profile');
