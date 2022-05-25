@@ -14,10 +14,10 @@ class PermissionGestureController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(int $id)
+    public function index(int $id, int $roleID)
     {
         $user = User::findOrFail($id);
-        $role = Role::findOrFail(2);
+        $role = Role::findOrFail($roleID);
         $user->assignRole($role);
 
         return redirect()->route('accueil')->with('success', 'Le rôle a bien été assigné.');
