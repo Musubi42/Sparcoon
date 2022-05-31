@@ -12,6 +12,7 @@
     {{-- It advised in the doc of flowbite to add the link at the end of the body --}}
     {{-- https://flowbite.com/docs/getting-started/laravel/#flowbite-components --}}
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/traitement.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>@yield('title')</title>
 </head>

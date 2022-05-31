@@ -81,14 +81,35 @@
                 <div class="w-full md:flex-1 md:pt-3">
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Posologie
                     </h3>
+                    <div id="posologieContainer">
+                        <div class="w-full flex flex-wrap mx-4 my-6">
+                            <div class="mr-10">
+                                <label class="mr-2" for="dosage">Dosage:</label>
+                                <input type="number" id="dosage" name="dosage" placeholder="1" required>
+                            </div>
+                            <label class="flex items-center mr-2" for="posologie">Heure:</label>
+                            <input type="time" id="posologie" name="posologie" min="00:00" max="23:59" required>
 
-                    <div class="w-full flex flex-wrap mx-4 my-6">
-                        <div class="mr-10">
-                            <label class="mr-2" for="appt">Dosage:</label>
-                            <input type="number" id="appt" name="appt" required>
+                            <div id="delPosologieField" class="ml-6 cursor-pointer flex items-center">
+                                <img height="38" width="38" src="{{ asset('storage/asset/image/icon/bin.svg') }}" alt="">
+                            </div>
                         </div>
-                        <label class="flex items-center mr-2" for="appt">Heure:</label>
-                        <input type="time" id="appt" name="appt" min="00:00" max="23:59" required>
+                    </div>
+
+                    {{-- Button to a new posologie field --}}
+                    <div class="flex justify-start">
+                        <button id="addPosologieField"
+                            class="inline-flex h-14 w-auto mx-4 items-center justify-end text-white bg-green-700 rounded-lg">
+                            <div class="mx-4">
+                                <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" fill="white"
+                                    viewBox="0 0 448 512">
+                                    {{-- ! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --}}
+                                    <path
+                                        d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z" />
+                                </svg>
+                            </div>
+                            <span class="whitespace-nowrap font-semibold text-2xl"></span>
+                        </button>
                     </div>
                 </div>
             </div>

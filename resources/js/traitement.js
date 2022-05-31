@@ -1,14 +1,21 @@
 require("./bootstrap");
 
 const addPosologieField = document.querySelector("#addPosologieField");
-const delPosologieField = document.querySelector("#delPosologieField");
+
 // create addeventlistener
 addPosologieField.addEventListener("click", () => {
   console.log("hi");
 
   // create parent div
   const divParent = document.createElement("div");
-  divParent.classList.add("w-full", "flex", "flex-wrap", "mx-4", "my-6");
+  divParent.classList.add(
+    "w-full",
+    "flex",
+    "flex-wrap",
+    "justify-center",
+    "mx-4",
+    "my-6"
+  );
 
   // Dosage
   // Create div for dosage field
@@ -18,7 +25,6 @@ addPosologieField.addEventListener("click", () => {
   // Create label for dosage field
   const labelDosage = document.createElement("label");
   labelDosage.classList.add("mr-2");
-  labelDosage.setAttribute("for", "dosage");
   labelDosage.innerHTML = "Dosage:";
 
   // create input
@@ -36,7 +42,7 @@ addPosologieField.addEventListener("click", () => {
   const labelPosologie = document.createElement("label");
   labelPosologie.classList.add("flex", "items-center", "mr-2");
   labelPosologie.setAttribute("for", "posologie");
-  labelPosologie.innerHTML = "Heure:";
+  labelPosologie.innerHTML = "Posologie:";
 
   // create input for posologie field
   const inputPosologie = document.createElement("input");
@@ -48,40 +54,11 @@ addPosologieField.addEventListener("click", () => {
   inputPosologie.setAttribute("max", "23:59");
   inputPosologie.setAttribute("required", "required");
 
-  // Bin icon
-  // Create div for bin icon
-  const divBin = document.createElement("div");
-  divBin.setAttribute("id", "delPosologieField");
-  divBin.classList.add("flex", "items-center", "ml-6", "cursor-pointer");
-
-  // create image for bin icon
-  const imgBin = document.createElement("img");
-  imgBin.setAttribute("height", "38");
-  imgBin.setAttribute("width", "38");
-  imgBin.setAttribute(
-    "src",
-    "http://localhost:8000/storage/asset/image/icon/bin.svg"
-  );
-  imgBin.setAttribute("alt", "bin Icon");
-
-  // append image to divBin
-  divBin.appendChild(imgBin);
-
   // append input and button to div
   divParent.appendChild(divDosage);
   divParent.appendChild(labelPosologie);
   divParent.appendChild(inputPosologie);
-  divParent.appendChild(divBin);
 
   // append divParent to div
-  document.querySelector("#posologieContainer").appendChild(divParent);
-});
-
-// On ne peut pas supprimer des éléments nouvellements crées, il faudrait utiliser un array, et faire les updates du Dom en fonction de l'array, voir l'exo de Phael
-delPosologieField.addEventListener("click", (el) => {
-  console.log(el.target.parentNode.parentNode);
-  const toDel = el.target.parentNode.parentNode;
-  const posologieContainer = document.querySelector("#posologieContainer");
-  // el.remove();
-  posologieContainer.removeChild(toDel);
+  document.querySelector("#posologie-container").appendChild(divParent);
 });
