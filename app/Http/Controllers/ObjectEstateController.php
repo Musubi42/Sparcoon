@@ -96,7 +96,8 @@ class ObjectEstateController extends Controller
     public function edit(objectEstate $objectEstate)
     {
         if(auth()->user()->hasPermissionTo('object.update')){
-            return view('patrimoine.objet_modify', compact('objectEstate'));
+            $categories = Categorie::all()->except($objectEstate->categorie_id);
+            return view('patrimoine.objet_modify', compact('objectEstate', 'categories'));
         }else{
             return redirect()->route('accueil')->with('error', 'Vous n\'avez pas le droit d\'accéder à cette page');
         }
@@ -111,16 +112,9 @@ class ObjectEstateController extends Controller
      */
     public function update(UpdateobjectEstateRequest $request, objectEstate $objectEstate)
     {
-        Validator::make($request->all())->validated();
-
-        $objectEstate->name = $request->name;
-        $objectEstate->description = $request->description;
-        $objectEstate->date_acquisition = $request->date_acquisition;
-        $objectEstate->value = $request->value;
-
-        $objectEstate->save();
-
-        return redirect('/patrimoine')->with('success', 'Objet modifié avec succès');
+        $validated = $request->validated();
+        $objectEstate->update($request->all());
+        return redirect()->route('patrimoines.index')->with('success', 'Objet modifié avec succès');
     }
 
     /**
@@ -133,9 +127,9 @@ class ObjectEstateController extends Controller
     {
         if(auth()->user()->hasPermissionTo('object.delete')){
             $objectEstate->delete();
-            return redirect('/patrimoine')->with('success', 'Objet supprimé avec succès');
+            return redirect()->route('patrimoines.index')->with('success', 'Objet supprimé avec succès');
         }else{
-            return redirect()->route('accueil')->with('success', 'Objet supprimé avec succès');
+            return redirect()->route('accueil')->with('success', 'Erreur, vous n\'avez pas le droit d\'accéder à cette page');
         }
     }
 }

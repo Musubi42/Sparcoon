@@ -20,6 +20,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'id',
         'firstname',
         'lastname',
         'email',
@@ -65,16 +66,16 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
-    public function patients(User $user)
+    public function patients()
     {
-        if($user->hasRole('soignant')) {
-            return $this->belongsToMany(User::class, 'soignants', 'soignant_id', 'user_id');
+        if($this->hasRole('Soignant')){
+            return $this->belongsToMany(User::class, 'soignants', 'soignant_id', 'user_id');   
         }
     }
 
-    public function soignants(User $user)
+    public function soignants()
     {
-        if($user->hasRole('patient')) {
+        if($this->hasRole('Patient')) {
             return $this->belongsToMany(User::class, 'soignants', 'user_id', 'soignant_id');
         }
     }

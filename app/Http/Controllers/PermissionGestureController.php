@@ -49,7 +49,7 @@ class PermissionGestureController extends Controller
                 'categorie.create', 'categorie.update', 'categorie.show', 'categorie.delete', 'image.create', 'image.update', 'image.show', 'image.delete', 'object.create', 'object.update', 'object.show', 'object.delete', 'patrimoine.index'
             ]);
             $patient->givePermissionTo([
-                'categorie.show','image.show', 'object.show',  'patrimoine.index'
+                'categorie.show','image.show', 'object.show',  'patrimoine.index', 'object.create', 'object.update', 'object.delete'
             ]);
         return redirect()->route('accueil')->with('success', 'Les permissions par défaut ont été initialisées ainsi que les rôles.');
     }

@@ -11,7 +11,9 @@
                 class="mb-10 mx-auto text-3xl md:text-4xl leading-tight text-coolGray-900 font-bold tracking-tighter max-w-5xl">
                 Modifier objet</h1>
         </div>
-
+        <form action="{{ route('objectEstates.update', ['objectEstate' => $objectEstate ]) }}" method="POST">
+            @csrf
+            @method("PATCH")
         <div class="container px-4 mx-auto">
             <div
                 class="flex flex-wrap p-8 text-center md:text-left hover:bg-white rounded-md hover:shadow-xl transition duration-200">
@@ -26,11 +28,8 @@
                     </div>
                 </div>
                 <div class="w-full md:flex-1 md:pt-3">
-                    <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Nom de l'objet</h3>
-                    <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
-                    <span
-                        class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none text-gray-700">Je
-                        suis le nom de l'objet</span>
+                    <label class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold block  text-gray-700 uppercase tracking-wide" for="name">Nom de l'objet</label>
+                    <input type="text" name="name" id="name" value="{{ $objectEstate->name }}" class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none text-gray-700">
                 </div>
             </div>
 
@@ -48,12 +47,12 @@
                 <div class="w-full md:flex-1 md:pt-3">
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Catégorie</h3>
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
-                    <select
+                    <select name="categorie_id"
                         class="appearance-none block py-3 px-4 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none">
-                        <option>Sélectionner catégorie</option>
-                        <option>Catégorie 1</option>
-                        <option>Catégorie 2</option>
-                        <option>Catégorie 3</option>
+                        <option selected value="{{ $objectEstate->categorie->id }}">{{ $objectEstate->categorie->name}}</option>
+                        @foreach($categories as $categorie)
+                            <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -74,7 +73,7 @@
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Date d'achat</h3>
                     <input
                         class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
-                        type="date" id="buyDate" name="date d'achat" lang="fr">
+                        type="date" id="date_acquisition" name="date_acquisition" value="{{ $objectEstate->date_acquisition }}" lang="fr">
                 </div>
             </div>
             <div
@@ -94,7 +93,7 @@
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
                     <input
                         class="appearance-none block w-full py-3 px-4 mb-2 md:mb-0 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
-                        type="number" placeholder="Prix de l'objet">
+                        type="number" name="value" value="{{ $objectEstate->value }}" placeholder="Prix de l'objet">
                 </div>
             </div>
 
@@ -114,10 +113,13 @@
                     <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Description</h3>
                     <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
                     <textarea class="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
-                        placeholder="Description de l'objet" rows="5"></textarea>
+                      name="description"  placeholder="Description de l'objet" rows="5">{{$objectEstate->description }}</textarea>
                 </div>
             </div>
+            
+            <button>Envoyer</button>
         </div>
+    </form>
     </section>
 
     <div class="my-12"></div>

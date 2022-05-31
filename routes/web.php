@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\GesturePatientsController;
 use App\Http\Controllers\PatrimoineController;
 use App\Http\Controllers\ObjectEstateController;
 use App\Http\Controllers\PermissionGestureController;
@@ -56,6 +57,9 @@ Route::middleware('auth')->group(function () {
   Route::get('/intervenant', function () {
     return view('intervenant');
   })->name('intervenant');
+
+  Route::post('/soignant/add', [GesturePatientsController::class, 'add'])->name('addPatient')->middleware('auth');
+  Route::get('/soignant/add', [GesturePatientsController::class, 'create'])->name('createPatients')->middleware('auth');
 
   // Route::get('/patrimoine', function () {
   //   return view('patrimoine.patrimoine');
