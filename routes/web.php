@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\PatrimoineController;
 use App\Http\Controllers\ObjectEstateController;
 use App\Http\Controllers\PermissionGestureController;
@@ -40,9 +41,12 @@ Route::middleware('auth')->group(function () {
     return view('calendrier');
   })->name('cal');
 
-  Route::resource('objectEstates', ObjectEstateController::class)->middleware('auth');
-  Route::resource('patrimoines', PatrimoineController::class)->middleware('auth');
 
+  Route::middleware('auth')->group(function () {
+    Route::resource('objectEstates', ObjectEstateController::class);
+    Route::resource('patrimoines', PatrimoineController::class);
+    Route::resource('categories', CategorieController::class);
+  });
   // TODO : Les routes ci-dessous sont a créer
 
   // Route::get('/traitement', function () {
