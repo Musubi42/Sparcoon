@@ -37,6 +37,10 @@ Route::middleware('auth')->group(function () {
     return view('traitement.show');
   })->name('traitement');
 
+  Route::get('/traitements/update', function () {
+    return view('traitement.update');
+  })->name('traitement');
+
   Route::get('/calendrier', function () {
     return view('calendrier');
   })->name('cal');
