@@ -2165,7 +2165,7 @@ module.exports = {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var addPosologieField = document.querySelector("#addPosologieField");
-var delPosologieField = document.querySelector("#delPosologieField"); // create addeventlistener
+var posologieContainer = document.querySelector("#posologieContainer"); // create addeventlistener
 
 addPosologieField.addEventListener("click", function () {
   console.log("hi"); // create parent div
@@ -2224,14 +2224,18 @@ addPosologieField.addEventListener("click", function () {
   divParent.appendChild(divBin); // append divParent to div
 
   document.querySelector("#posologieContainer").appendChild(divParent);
-}); // On ne peut pas supprimer des éléments nouvellements crées, il faudrait utiliser un array, et faire les updates du Dom en fonction de l'array, voir l'exo de Phael
+}); // Delete posologie field
 
-delPosologieField.addEventListener("click", function (el) {
-  console.log(el.target.parentNode.parentNode);
-  var toDel = el.target.parentNode.parentNode;
-  var posologieContainer = document.querySelector("#posologieContainer"); // el.remove();
+posologieContainer.addEventListener("click", function (e) {
+  // Check that we clicked on the delete icon
+  if (e.target.parentElement.id != "delPosologieField") {
+    return;
+  } // Delete field only if there is more than one field
 
-  posologieContainer.removeChild(toDel);
+
+  if (posologieContainer.childElementCount > 1) {
+    posologieContainer.removeChild(e.target.parentNode.parentNode);
+  }
 });
 
 /***/ }),

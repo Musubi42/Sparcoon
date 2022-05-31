@@ -1,7 +1,7 @@
 require("./bootstrap");
 
 const addPosologieField = document.querySelector("#addPosologieField");
-const delPosologieField = document.querySelector("#delPosologieField");
+const posologieContainer = document.querySelector("#posologieContainer");
 // create addeventlistener
 addPosologieField.addEventListener("click", () => {
   console.log("hi");
@@ -77,11 +77,14 @@ addPosologieField.addEventListener("click", () => {
   document.querySelector("#posologieContainer").appendChild(divParent);
 });
 
-// On ne peut pas supprimer des éléments nouvellements crées, il faudrait utiliser un array, et faire les updates du Dom en fonction de l'array, voir l'exo de Phael
-delPosologieField.addEventListener("click", (el) => {
-  console.log(el.target.parentNode.parentNode);
-  const toDel = el.target.parentNode.parentNode;
-  const posologieContainer = document.querySelector("#posologieContainer");
-  // el.remove();
-  posologieContainer.removeChild(toDel);
+// Delete posologie field
+posologieContainer.addEventListener("click", (e) => {
+  // Check that we clicked on the delete icon
+  if (e.target.parentElement.id != "delPosologieField") {
+    return;
+  }
+  // Delete field only if there is more than one field
+  if (posologieContainer.childElementCount > 1) {
+    posologieContainer.removeChild(e.target.parentNode.parentNode);
+  }
 });
