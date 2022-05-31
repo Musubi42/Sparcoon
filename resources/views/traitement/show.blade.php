@@ -13,18 +13,22 @@
         </div>
         <div class="flex flex-wrap -mx-4">
 
-            <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-16">
+            <div class="w-full px-4 mb-16">
                 <div class="group h-full">
 
                     <h1 class="text-5xl mt-2 mb-6 leading-tight font-heading">9:00</h1>
-                    <div class="flex flex-col">
-                        <span class="">Jean</span>
-                        <span class="">Luc</span>
+                    <div class="flex flex-row flex-wrap mx-4">
+                        <span class="w-1/4 p-4">Jean</span>
+                        <span class="w-1/4 p-4">Jean</span>
+                        <span class="w-1/4 p-4">Jean</span>
+                        <span class="w-1/4 p-4">Jean</span>
+                        <span class="w-1/4 p-4">Jean</span>
+                        <span class="w-1/4 p-4">Jean</span>
                     </div>
                 </div>
             </div>
 
-            <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-16">
+            {{-- <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-16">
                 <div class="group h-full">
                     <div
                         class="group relative h-full px-8 pt-16 pb-8 bg-coolGray-50 group-hover:bg-white rounded-md shadow-md hover:shadow-xl transition duration-200">
@@ -207,7 +211,7 @@
                             USA domestic orders we offer FedEx and USPS shipping. Contact us via email to learn more.</p>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection

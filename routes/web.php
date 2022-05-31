@@ -34,7 +34,7 @@ Route::middleware('auth')->group(function () {
   })->name('dep');
 
   Route::get('/traitements', function () {
-    return view('traitements');
+    return view('traitement.show');
   })->name('traitement');
 
   Route::get('/calendrier', function () {
