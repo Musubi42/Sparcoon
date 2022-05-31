@@ -77,7 +77,7 @@ class ProfileController extends Controller
      */
     public function edit(Profile $profile)
     {
-        //
+        return  view('auth.edit', compact('profile'));
     }
 
     /**
@@ -89,7 +89,17 @@ class ProfileController extends Controller
      */
     public function update(UpdateProfileRequest $request, Profile $profile)
     {
-        //
+        $validated = $request->validated();
+
+        $profile->update([
+            'avatar' => $request->avatar,
+            'bio' => $request->bio,
+            'user_id' => auth()->user()->id
+        ]);
+
+        $profile->save();
+
+        return redirect()->route('accueil')->with('success', 'Le profil est bien modifié.');
     }
 
     /**

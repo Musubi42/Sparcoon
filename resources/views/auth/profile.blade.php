@@ -59,12 +59,17 @@
                         </svg>
                     </div>
                 </div>
-                <div class="w-full md:flex-1 md:pt-3">
-                    <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Description</h3>
-                    <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
-                    <textarea class="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
-                     rows="5">  {{ $profile->bio }}</textarea>
-                </div>
+                <form action="{{ route('profile.update', ["userId" => auth()->user()->id]) }}" method="post">
+                    @method("PUT")
+                    @csrf
+                    <div class="w-full md:flex-1 md:pt-3">
+                        <h3 class="mb-4 text-xl md:text-2xl leading-tight text-coolGray-900 font-bold">Description</h3>
+                        <label class="block mb-2 text-xs text-gray-700 uppercase tracking-wide font-bold"></label>
+                        <textarea class="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
+                        rows="5">  {{ $profile->bio }}</textarea>
+                    </div>
+                    <button> Modifier la Description</button>
+                </form>
             </div>
 
             <div class="my-12"></div>

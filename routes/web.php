@@ -87,7 +87,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/profile/{userId}', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');
-
+Route::put('/profile/{userId}/update', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
 Route::resource('examples', ExampleController::class)->middleware('auth');
 
 Route::get('/init/{id}/{role}', [PermissionGestureController::class, 'index'])->name('permission.index')->middleware('auth');
