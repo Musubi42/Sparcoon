@@ -41,7 +41,7 @@
                 <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Titre</span>
                 {{ $example->title }}
             </td>
-            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b text-center block lg:table-cell relative lg:static">
+            <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b  block lg:table-cell relative lg:static">
                 <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Action</span>
                 <a href="{{ route('examples.show', $example->id) }}" class="text-blue-500 hover:text-blue-700">Voir</a>
                 <a href="{{ route('examples.edit', $example->id) }}" class="ml-4 text-blue-500 hover:text-blue-700">Modifier</a>
