@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LieuxController;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategorieController;
-use App\Http\Controllers\GesturePatientsController;
 use App\Http\Controllers\PatrimoineController;
 use App\Http\Controllers\ObjectEstateController;
+use App\Http\Controllers\GesturePatientsController;
 use App\Http\Controllers\PermissionGestureController;
 
 /*
@@ -47,6 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('objectEstates', ObjectEstateController::class);
     Route::resource('patrimoines', PatrimoineController::class);
     Route::resource('categories', CategorieController::class);
+    Route::resource('lieux', LieuxController::class);
   });
   // TODO : Les routes ci-dessous sont a créer
 

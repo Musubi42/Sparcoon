@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\Lieux;
 use App\Models\Profile;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
@@ -78,5 +79,10 @@ class User extends Authenticatable
         if($this->hasRole('Patient')) {
             return $this->belongsToMany(User::class, 'soignants', 'user_id', 'soignant_id');
         }
+    }
+
+    public function lieux()
+    {
+        return $this->hasMany(Lieux::class);
     }
 }

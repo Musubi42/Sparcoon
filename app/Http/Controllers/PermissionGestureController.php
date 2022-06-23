@@ -40,9 +40,18 @@ class PermissionGestureController extends Controller
             Permission::create(['name'=>'object.delete']);
             Permission::create(['name'=>'patrimoine.index']);
 
+            // Gestion des lieux
+            Permission::create(['name'=>'lieux.index']);
+            Permission::create(['name'=>'lieux.show']);
+            Permission::create(['name'=>'lieux.create']);
+            Permission::create(['name'=>'lieux.delete']);
+
+
             $ceo = Role::create(['name'=>'CEO']);
             $soignant = Role::create(['name'=>'Soignant']);
             $patient = Role::create(['name'=>'Patient']);
+            $senior = Role::create(['name' => 'Senior']);
+            $junior = Role::create(['name' => 'Junior']);
 
             $ceo->givePermissionTo(['categorie.create', 'categorie.update', 'categorie.show', 'categorie.delete', 'image.create', 'image.update', 'image.show', 'image.delete', 'object.create', 'object.update', 'object.show', 'object.delete', 'patrimoine.index']);
             $soignant->givePermissionTo([
@@ -50,6 +59,14 @@ class PermissionGestureController extends Controller
             ]);
             $patient->givePermissionTo([
                 'categorie.show','image.show', 'object.show',  'patrimoine.index', 'object.create', 'object.update', 'object.delete'
+            ]);
+
+            $senior->givePermissionTo([
+                'categorie.show','image.show', 'object.show',  'patrimoine.index', 'object.create', 'object.update', 'object.delete'
+            ]);
+
+            $junior->givePermissionTo([
+                'categorie.show','image.show', 'object.show',  'patrimoine.index', 'object.create', 'object.update', 'object.delete', 'lieux.index', 'lieux.show', 'lieux.create', 'lieux.delete'
             ]);
         return redirect()->route('accueil')->with('success', 'Les permissions par défaut ont été initialisées ainsi que les rôles.');
     }
